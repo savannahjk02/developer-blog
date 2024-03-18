@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const newBlogForm = document.querySelector('.new-blog-form');
+const newBlogForm = document.querySelector('.new-blog-form');
+const deleteButtons = document.querySelectorAll('.btn-danger');
 
   // Event listener for submitting the new blog form
   if (newBlogForm) {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const content = document.querySelector('#blog-content').value.trim();
 
       if (title && content) {
-        const response = await fetch('/api/blogs', {
+        const response = await fetch('/api/blog', {
           method: 'POST',
           body: JSON.stringify({ title, content }),
           headers: { 'Content-Type': 'application/json' },
@@ -26,13 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Event listener for deleting a blog post
-  const deleteButtons = document.querySelectorAll('.btn-danger');
   if (deleteButtons) {
     deleteButtons.forEach((button) => {
       button.addEventListener('click', async (event) => {
         const id = event.target.getAttribute('data-id');
-
-        const response = await fetch(`/api/blogs/${id}`, {
+        const response = await fetch(`/api/blog/${id}`, {
           method: 'DELETE',
         });
 
@@ -43,5 +41,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-  }
-});
+  };

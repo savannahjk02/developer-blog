@@ -1,12 +1,12 @@
 [
   {
-    "title": "First Blog Post",
+    "name": "First Blog Post",
     "content": "This is the content of the first blog post.",
     "user_id": 1,
     "date_created": "2024-03-19T08:00:00Z"
   },
   {
-    "title": "Second Blog Post",
+    "name": "Second Blog Post",
     "content": "This is the content of the second blog post.",
     "user_id": 2,
     "date_created": "2024-03-20T10:00:00Z"
